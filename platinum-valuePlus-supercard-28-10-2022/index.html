@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<!--<apex:page readOnly="true"
+applyHtmlTag="false"  applyBodyTag="false"  
+sidebar="false"    
+showHeader="false"    
+cache="true"    
+renderAs="advanced_pdf"
+docType="html-5.0">-->
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Platinum ValuePlus Supercard</title>
+<!--<link href="css/style.css" rel="stylesheet" />-->
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700:900&amp;display=swap");
+
+@page {
+margin-top: 0px;
+margin-right: 0px;
+margin-left: 0px;
+margin-bottom: 0px;
+size: 8.1in 20.5in;
+background: #f5f5f5;
+}
+
+page {
+display: block;
+margin: 0 auto;
+margin-bottom: 0px;
+}
+
+page[size="A4"] {
+width: 21cm;
+height: 29.7cm;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: Roboto, sans-serif;
+background: #f5f5f5;
+color: #000;
+}
+
+.masthead {
+/*background-image: url("{!URLFOR($Resource.MonthlyPager, 'images/masthead-bg.png") ;*/
+background-image: url(images/masthead-bg.png);
+background-position: center center !important;
+background-size: cover !important;
+background-repeat: no-repeat !important;
+width: 100%;
+height: 11cm;
+}
+
+.header {
+padding: 15px 20px;
+}
+
+.logo img {
+width: 120px;
+float: right;
+}
+
+.clr {
+clear: both;
+}
+
+.cardSection {
+padding: 10px 30px;
+}
+
+.magniFi {
+float: left;
+color: #000000;
+margin-top: 20px;
+border-right: 2px solid #999999;
+margin-right: 30px;
+margin-bottom: 20px;
+width: 30%;
+}
+
+.magniFi img {
+width: 50%;
+}
+
+.magniFi strong {
+font-size: 12pt;
+}
+
+.headCard {
+float: left;
+width: 15%;
+}
+
+.headCard img {
+width: 100%;
+}
+
+.tysk-text {
+font-size: 9pt;
+font-weight: 400;
+color: #59595c;
+margin-bottom: 24px;
+}
+
+.headCardText {
+color: #ec2085;
+float: left;
+font-size: 15pt;
+text-transform: uppercase;
+font-weight: 700;
+width: 30%;
+margin-left: 20px;
+margin-top: 50px;
+}
+
+.welcomeSection {
+padding: 30px 20px;
+}
+
+.welcomeSection h3 {
+font-size: 15pt;
+margin: 0 0 5px 0;
+padding: 0;
+}
+
+.welcomeSection .welText {
+font-size: 11pt;
+}
+
+.cardFeatureSec {
+padding: 10px 20px;
+margin-top: -118.5px;
+}
+
+.purchaseText-wrap {
+padding: 8px 20px 26px 20px;
+}
+
+.purchaseText-wrap .purchaseText {
+font-weight: 400;
+font-size: 9pt;
+line-height: 7pt;
+color: #000000;
+}
+
+.cardFeatureHeading {
+color: #0572a8;
+font-size: 18pt;
+font-weight: 700;
+}
+
+.dashedLine {
+border-top: 2px dashed #0672a7;
+width: 100%;
+text-align: center;
+margin-top: 125px;
+}
+
+.cardFBox {
+margin: 20px auto;
+}
+
+.cardFBox ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.cardFBox ul li {
+width: 20%;
+float: left;
+margin-right: 5%;
+}
+
+.cardFBox ul li .CFImg img {
+width: 36px;
+height: 36px;
+}
+
+.CFImg {
+height: 40px;
+}
+
+.cardFBox ul li .CFDot {
+margin: 11px 0;
+}
+
+.cardFBox ul li .CFDot img {
+width: 17px;
+height: 17px;
+}
+
+.cardFBox ul li .CFHeading {
+font-size: 10pt;
+font-weight: 700;
+color: #10739f;
+}
+
+.cardFBox ul li .CFText {
+font-size: 9pt;
+font-weight: 400;
+color: #231f20;
+margin: 8px 0;
+}
+
+.cardFBox ul li .CFText ul {
+margin: 0 0 0 15px;
+padding: 0;
+list-style-type: disc;
+}
+
+.cardFBox ul li .CFText ul li {
+float: none;
+width: 100%;
+}
+
+.seprateLine {
+border-bottom: 1px solid #008586;
+margin: 0 20px 5px 20px;
+}
+
+.particularSec {
+padding: 5px 20px;
+}
+
+.partiLeft {
+float: left;
+width: 60%;
+border-right: 1px solid #008586;
+padding-right: 1%;
+margin-right: 1%;
+}
+
+.partiRight {
+float: left;
+width: 37%;
+}
+
+.flt {
+float: left;
+}
+
+.flt54 {
+float: left;
+width: 48%;
+}
+
+.flt44 {
+float: left;
+width: 48%;
+margin-left: 4%;
+}
+
+.partiHeadin {
+font-size: 14pt;
+color: #0572a8;
+font-weight: 700;
+}
+
+.flt54TextBold {
+float: left;
+width: 48%;
+font-size: 9pt;
+font-weight: 700;
+color: #000000;
+}
+
+.flt54TextLight {
+float: left;
+width: 48%;
+font-size: 9pt;
+font-weight: 400;
+color: #59595c;
+}
+
+.flt44TextLight {
+float: left;
+width: 48%;
+margin-left: 4%;
+font-size: 8pt;
+font-weight: 400;
+color: #59595c;
+}
+
+.row {
+margin-top: 20px;
+}
+
+.marT10 {
+margin-top: 10px;
+}
+
+.marT15 {
+margin-top: 15px;
+}
+
+.rowNoMar {
+margin-top: 0px;
+}
+
+.dTable {
+margin: 15px auto;
+}
+.dTable table {
+border: 1px solid #0672a7;
+border-spacing: 0;
+border-collapse: collapse;
+}
+.dTable table .l-Side {
+width: 55%;
+}
+.dTable table th {
+vertical-align: top;
+color: #196c96;
+text-align: left;
+padding: 6px;
+border: 1px solid #0672a7;
+}
+.dTable table td {
+padding: 12px;
+vertical-align: top;
+border: 1px solid #0672a7;
+}
+
+.dBox {
+border: 1px solid #0672a7;
+padding: 3%;
+float: left;
+width: 42%;
+margin-left: -1px;
+margin-top: -1px;
+}
+
+.dTextB {
+font-size: 8pt;
+font-weight: 700;
+color: #196c96;
+}
+
+.dText {
+font-size: 8pt;
+font-weight: 400;
+color: #59595c;
+padding: 5px 0;
+}
+
+.securityBox {
+background: #efeeef;
+padding: 5px 5px 20px 5px;
+}
+
+.imgLeft {
+float: left;
+}
+
+.imgLeft img {
+width: 30px;
+}
+
+.textRight {
+margin-left: 37px;
+font-size: 9pt;
+font-weight: 400;
+color: #59595c;
+}
+
+.textRight a {
+color: #59595c;
+text-decoration: none;
+}
+
+.textBold {
+font-size: 9pt;
+font-weight: 700;
+color: #000000;
+}
+
+.creditCardOffer {
+padding: 20px;
+font-size: 9pt;
+font-weight: 400;
+color: #59595c;
+}
+
+.freeTrial {
+background: #caebf4;
+border: 1.25px solid #60a4b7;
+padding: 15px 5px;
+}
+
+.freeContainer {
+width: 56%;
+margin: 0 auto;
+}
+
+.freeTriImg {
+width: 18%;
+}
+
+.freeTriImg img {
+float: left;
+margin-right: 30%;
+width: 90%;
+}
+
+.freeTriText {
+font-size: 8pt;
+font-weight: 400;
+color: #000000;
+padding: 10px 0;
+}
+
+.headerNew {
+background: #f4f9f7;
+}
+
+/*....*/
+
+@media print {
+body,
+page {
+margin: 0;
+box-shadow: 0;
+}
+
+page {
+margin: 0;
+/*size: letter;
+size: 21cm 29.7cm;*/
+height: 297mm;
+width: 210mm;
+background: #ffffff;
+}
+}
+</style>
+</head>
+
+<body>
+<page size="A4">
+<div class="headerNew">
+<img src="images/masthead.png" width="100%" alt="RBL Bank" />
+</div>
+
+<div
+style="
+background-color: #ffffff;
+background: url('images/body-bg.png');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+"
+>
+<div class="welcomeSection">
+<h3>Hi there!</h3>
+<div class="welText">Below is a quick summary of all the key facts you need to know about your credit card benefits &amp; charges.</div>
+</div>
+<div class="dashedLine"></div>
+<div class="cardFeatureSec">
+<div class="cardFeatureHeading">Your Card Features</div>
+<div class="cardFBox">
+<ul>
+<li>
+<div class="CFImg">
+<img src="images/welcome-gift.png" alt="welcome gift" />
+</div>
+<div class="CFDot">
+<img src="images/dot.png" alt="Dot" />
+</div>
+<div class="CFHeading">
+Welcome<br />
+Gift
+</div>
+<div class="CFText">
+Get ₹500 Gift vouchers on payment of joining fee and making
+1st transaction of ₹2000 within 30 days of card setup
+</div>
+</li>
+
+<li>
+<div class="CFImg">
+<img src="images/badge.png" alt="badge" />
+</div>
+<div class="CFDot">
+<img src="images/dot.png" alt="Dot" />
+</div>
+<div class="CFHeading">Accelerated<br />Reward Points</div>
+<div class="CFText">
+Get 10% cashback on Fuel Purchases (up to ₹250 per month)
+</div>
+</li>
+<li>
+<div class="CFImg">
+<img src="images/fuel.png" alt="Fuel" />
+</div>
+<div class="CFDot">
+<img src="images/dot.png" alt="Dot" />
+</div>
+<div class="CFHeading">Savings on<br />Fuel Surcharge</div>
+<div class="CFText">
+Fuel Surcharge Waiver across all pumps up to ₹100 per month
+</div>
+</li>
+<li style="margin-right: 0">
+<div class="CFImg">
+<img src="images/spend.png" alt="Spend" />
+</div>
+<div class="CFDot">
+<img src="images/dot.png" alt="Dot" />
+</div>
+<div class="CFHeading">
+Spend Based<br />
+Waiver
+</div>
+<div class="CFText">
+On crossing ₹50,000 spends in a year, get next year annual
+fee waived off
+</div>
+</li>
+</ul>
+</div>
+<div class="clr"></div>
+</div>
+<!--
+<div class="purchaseText-wrap">
+<div class="purchaseText">^Except for online purchases made on Education, Insurance, Utilities (including Bills2Pay), Rent Payment and Wallet Load.
+</div>
+</div>
+-->
+<div class="seprateLine"></div>
+<div class="particularSec">
+<div class="partiLeft">
+<div class="flt54">
+<div class="partiHeadin">Particulars</div>
+</div>
+<div class="flt44">
+<div class="partiHeadin">Charges</div>
+</div>
+<div class="clr"></div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Joining Fee</div>
+<div class="flt44TextLight">Nil for Primary &amp; Add-on cardholder</div>
+<div class="clr"></div>
+</div>
+<div class="row">
+<div class="flt54TextBold">Membership Fee</div>
+<div class="clr"></div>
+</div>
+
+<div class="row">
+<div class="flt54TextBold">
+Finance charges
+<div>(Retail purchases and Cash)</div>
+</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Charges imposed in case the payment is not made in full and
+the outstanding is carried to the next bill cycle
+</div>
+<div class="flt44TextLight">
+Interest rate up to 3.99% per month (47.88% per annum)
+</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Cash Withdrawal charges</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Charges incurred in case there is a cash withdrawal made via
+the Credit Card
+</div>
+<div class="flt44TextLight">
+2.5% of the cash amount (Min. ₹500)
+</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">
+Overdue Penalty / Late Payment Fee
+</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Penalty levied when the payment is past the due date
+</div>
+<div class="flt44TextLight">
+*W.e.f May 15, 2023 following late payment charges structure will be applicable.
+<!-- div table -->
+<div class="dTable">
+<table>
+<tr>
+<th class="l-Side" colspan="2">Late Payment Fee (Rs.)</th>
+</tr>
+<tr>
+<td class="l-Side" colspan="2">12.5% of Outstanding Amount</td>
+</tr>
+<tr>
+<td class="l-Side">Min Rs. 5/-</td>
+<td class="r-Side" style="padding-left: 10px;">Max Rs. 1300/-</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="clr"></div>
+</div>
+
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Over Limit Penalty</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Charges imposed if card usage exceeds the assigned CC limit
+</div>
+<div class="flt44TextLight">₹600</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Cash Payment at Branches</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Charges on paying CC bill with cash at any RBL Bank branch
+</div>
+<div class="flt44TextLight">
+Rs.100 / cash deposit transaction at RBL Bank branch effective
+1st July'2022
+</div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Service Charges</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Service charges levied for transactions
+</div>
+<div class="flt44TextLight">
+GST rate as prescribed by Govt. (18% as applicable)
+</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Minimum Amount Payable</div>
+<div class="clr"></div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">
+Minimum Amount Due to be paid at each billing cycle
+</div>
+<div class="flt44TextLight">
+5% of Total Amount Due (min Rs. 200), new EMI debits for the
+month or any previously unpaid EMI debits+GST
+</div>
+<div class="clr"></div>
+<div class="row">
+<div class="flt54TextBold">Credit Limit</div>
+<div class="flt44TextLight">[CREDIT_LIMIT]</div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">&nbsp;</div>
+<div class="flt44TextLight">&nbsp;</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Available Credit Limit</div>
+<div class="flt44TextLight">[AVAILABLE_CREDIT_LIMIT]</div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">&nbsp;</div>
+<div class="flt44TextLight">&nbsp;</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Cash Withdrawal Limit</div>
+<div class="flt44TextLight">[CASH_WITHDRAWAL_LIMIT]</div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">&nbsp;</div>
+<div class="flt44TextLight">&nbsp;</div>
+<div class="clr"></div>
+</div>
+<!-- Row -->
+<div class="row">
+<div class="flt54TextBold">Billing Statements</div>
+<div class="flt44TextLight">[BILLING_STATMENTS]</div>
+</div>
+<div class="rowNoMar">
+<div class="flt54TextLight">&nbsp;</div>
+<div class="flt44TextLight">&nbsp;</div>
+<div class="clr"></div>
+</div>
+</div>
+<!-- Row -->
+<div class="clr"></div>
+</div>
+<div class="partiRight">
+<div class="securityBox">
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/caution-illustration.png" alt="Caution" />
+</div>
+<div class="textRight">
+<div class="partiHeadin">Important Security Tips</div>
+</div>
+<div class="clr"></div>
+</div>
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/tip-one.png" alt="Password" />
+</div>
+<div class="textRight">
+Never share your Card number, CVV, Expiry Date, OTP, PIN with
+anyone
+</div>
+<div class="clr"></div>
+</div>
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/tip-two.png" alt="Call" />
+</div>
+<div class="textRight">
+RBL Bank representatives will never ask to share your OTP for
+Card activation or for any other concern
+</div>
+<div class="clr"></div>
+</div>
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/tip-three.png" alt="Call Not" />
+</div>
+<div class="textRight">
+If someone calls and asks you to share OTP, it is a FRAUD
+Attempt. Beware!
+</div>
+<div class="clr"></div>
+</div>
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/tip-four.png" alt="Mobile" />
+</div>
+<div class="textRight">
+OTP SMS/ email will always include merchant name and amount of
+transaction for reference
+</div>
+<div class="clr"></div>
+</div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-one.png" alt="Earn Reward" />
+</div>
+<div class="textRight">
+<div class="textBold">How to redeem Reward Points?</div>
+You earn Reward Points every time you use your Card. These
+points can be redeemed for flight and hotel bookings, gift
+vouchers, and a lot more. To redeem the Reward Points, visit
+rblrewards.com.
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-two.png" alt="Credit Card" />
+</div>
+<div class="textRight">
+<div class="textBold">How to pay Credit Card dues?</div>
+Pay your dues in time to avoid late fees. You can choose from
+various payment options such as MyCard App, NEFT, UPI, Cash or
+Cheque.
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-three.png" alt="Transaction" />
+</div>
+<div class="textRight">
+<div class="textBold">
+How to check transaction details and dues?
+</div>
+Keeping a track of all Card related transactions has become
+easy. Simply use MyCard App to stay updated. Give us a missed
+call on 7045 906 905 to download the app.
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-four.png" alt="Contact customer service" />
+</div>
+<div class="textRight">
+<div class="textBold">How to contact customer service?</div>
+Our 24x7 customer service is readily available to help you. Call
+us at 022 7119 0900 or write to us at
+<a href="mailto:supercardservice@rblbank.com"
+>supercardservice@rblbank.com</a
+>
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-five.png" alt="Raise" />
+</div>
+<div class="textRight">
+<div class="textBold">
+How to raise Billing Disputes for resolution?
+</div>
+You can email or send RBL Bank signed dispute form within 30
+days of issuance of statement, download form here
+<a
+href="https://www.rblbank.com/download-forms/credit-cards"
+target="_blank"
+>https://www.rblbank.com/download-forms/credit-cards</a
+>.
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-six.png" alt="Contact" />
+</div>
+<div class="textRight">
+<div class="textBold">
+How to contact Grievance Redressal Officer?
+</div>
+Mr. Vikas Nigam- You can call him at 022-71432700 or email at
+<a href="mailto:principalnodalofficer@rblbank.com"
+>principalnodalofficer@rblbank.com</a
+>
+</div>
+<div class="clr"></div>
+</div>
+
+<div class="marT15">
+<div class="imgLeft">
+<img src="images/que-seven.png" alt="Location" />
+</div>
+<div class="textRight">
+<div class="textBold">Our Complete postal address?</div>
+Card Services, RBL Bank Ltd., Unit 306-311, 3rd floor, JMD
+Megapolis, Sohna Road, Sector-48, Gurugram, Haryana- 122018
+</div>
+<div class="clr"></div>
+</div>
+</div>
+</div>        
+<div class="clr"></div>
+<div class="creditCardOffer">Credit Cards offer interest-free credit period of up to 50 days. Ensure you make a payment against your Card outstanding by Payment Due Date  mentioned in your monthly statement to avoid interest charges. You can also choose to make payment of Minimum Amount Due. Please note that interest is levied on the due amount in such cases.</div>
+<div class="freeTrial">
+<div class="freeContainer">
+<div class="freeTriImg">
+<img src="images/45-days.png" alt="45 Days" />
+</div>
+<div class="freeTriText">
+<div>
+45-Day Free Look Program. At RBL Bank, it’s always customer
+first!
+</div>
+<div class="marT10">
+In case you're not happy with our products or services, you can
+discontinue it at any time. No conditions. No questions.
+</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+</div>
+</div>
+</page>
+</body>
+</html>
+
+<!--</apex:page>-->
